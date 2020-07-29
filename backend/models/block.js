@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const task = require("./task");
 const Schema = mongoose.Schema;
 
 const blockSchema = new Schema({
@@ -19,9 +18,7 @@ const blockSchema = new Schema({
     type: Number,
     required: true,
   },
-  tasks: {
-    type: Array,
-  },
+  tasks: Array,
 });
 
 const Block = mongoose.model("Block", blockSchema);
