@@ -18,7 +18,18 @@ const blockSchema = new Schema({
     type: Number,
     required: true,
   },
-  tasks: Array,
+  tasks: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Task",
+    },
+  ],
+  days: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Day",
+    },
+  ],
 });
 
 const Block = mongoose.model("Block", blockSchema);

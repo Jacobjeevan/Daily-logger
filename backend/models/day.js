@@ -7,7 +7,12 @@ const daySchema = new Schema({
     required: true,
     unique: true,
   },
-  blocks: Array,
+  blocks: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Block",
+    },
+  ],
 });
 
 const Day = mongoose.model("Day", daySchema);

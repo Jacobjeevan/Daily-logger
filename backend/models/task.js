@@ -17,6 +17,12 @@ const taskSchema = new Schema(
       type: String,
       select: ["yes", "no", "maybe", "disabled"],
     },
+    blocks: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Block",
+      },
+    ],
   },
   {
     timestamps: true,
